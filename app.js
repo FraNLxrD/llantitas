@@ -8,7 +8,7 @@ app.set('views', path.join(__dirname, 'src', 'views'))
 
 
 app.get('/', (req,res)=>{
-    res.render('index')
+    res.render('product/index')
 })
 
 
