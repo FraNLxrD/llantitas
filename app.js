@@ -1,17 +1,41 @@
+
+///REQUIRES CORE
+
 const express = require('express')
-const app = express();
 const path = require('path')
 
-app.set('view engine', 'ejs');
+// EXPRESS MAIN
 
+const app = express();
+
+//VARIABLES
+
+const PORT = 912;
+
+//TEMPLATE ENGINE
+app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'src', 'views'))
 
+//REQUIRE DE MODULOS
 
-app.get('/', (req,res)=>{
-    res.render('product/index')
-})
+const mainRoutes = require("./src/routes/mainRoutes");
+/*
+const productRouter = require("./routes/productRoutes");
+const userRouter = require("./routes/userRoutes");
+*/
+
+//USES DE MODULOS
+
+app.use("/", mainRoutes);
+/* 
+app.use("/", productRouter);
+app.use("/", userRouter);
+app.use("/api", apiRouter);
+*/
 
 
-app.listen(3000, ()=>{
-    console.log("server en 3000")
+
+//LISTEN
+app.listen(PORT, ()=>{
+    console.log(`Server iniciado en http://localhost:${PORT}`);
 })
