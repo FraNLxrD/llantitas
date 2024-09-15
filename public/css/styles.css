@@ -28,13 +28,16 @@ nav {
     gap: 20px;
     height:40px;
     align-items: center;
-    justify-content: center;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.438);
 }
 nav a {
     color: white;
     text-decoration: none;
-    font-size: 30px;
+    font-size: 21px;
     margin: 5px;
+    padding-left: 30px;
 }
 .auth-buttons {
     display: flex;
@@ -56,4 +59,30 @@ h6{
 }
 h1{
     margin: 2px;
+}
+
+.barra{
+    margin-top: 20px;
+    width: 700px;
+    height: 30px;
+    background-color: #393939; 
+    border-radius: 5px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.438);
+}
+
+.p1{
+    color: grey;
+}
+
+.fa-solid{
+    margin-left: 10px;
+}
+
+.contenedor{
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
