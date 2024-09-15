@@ -20,6 +20,7 @@ app.set('views', path.join(__dirname, 'src', 'views'))
 //REQUIRE DE MODULOS
 
 const mainRoutes = require("./src/routes/mainRoutes");
+const userRoutes = require("./src/routes/userRoutes")
 /*
 const productRouter = require("./routes/productRoutes");
 const userRouter = require("./routes/userRoutes");
@@ -28,9 +29,9 @@ const userRouter = require("./routes/userRoutes");
 //USES DE MODULOS
 
 app.use("/", mainRoutes);
+app.use("/user", userRoutes);
 /* 
 app.use("/", productRouter);
-app.use("/", userRouter);
 app.use("/api", apiRouter);
 */
 
