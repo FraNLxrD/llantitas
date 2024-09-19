@@ -86,3 +86,50 @@ h1{
     display: flex;
     justify-content: center;
 }
+
+.login_box{
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-around;
+    align-items: center;
+    line-height: normal;
+    background-color: #EAEAEA;
+    margin-left: 40%;
+    margin-right: 40%;
+    color: #171818;
+    border-bottom-left-radius: 1em;
+    border-bottom-right-radius: 1em;
+}
+.login_inputs{
+    border-color: #171818;
+    border-radius: 1em;
+    background-color: #EAEAEA;
+    padding: 8px;
+}
+.mail_h4{
+    margin-right: 115px;
+}
+.contra_h4{
+    margin-right: 80px;
+}
+.login_btn{
+    background-color: #171818;
+    border: none;
+    color: white;
+    padding: 8px 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+.login_txt{
+    text-decoration: none;
+    color: #171818;
+}
+.login_txt:hover{
+    text-decoration: underline;
+
+}
+.txt_box{
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
