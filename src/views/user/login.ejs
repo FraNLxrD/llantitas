@@ -3,29 +3,18 @@
 <%- include("../partials/head") %>
 
 <body>
-    <header>
-        <div class="header">
-            <div class="logo">
-                <img src="/img/main/llantitas.svg" alt="Llantitas Logo">
-                <div>
-                    <h1>Llantitas</h1>
-                    <h6>La pagina de compra y venta mas grande de Jujuy</h6>
-                </div>
-            </div>
-        </div>
-        <nav></nav>
-    </header>
+    <%- include("../partials/header") %>
 
     <form action="">
         <div class="login_box">
 
             <h3>Iniciar sesión</h3>
-            — — — — — — — — —
+            ————————————————
             <h4 class="mail_h4">E-mail</h4>
-            <input class="login_inputs" type="text" name="email">
+            <input class="login_inputs" type="email" name="email">
 
             <h4 class="contra_h4">Contraseña</h4>
-            <input class="login_inputs" type="text" name="contraseña">
+            <input class="login_inputs" type="password" name="contraseña">
 
 
             <button class="login_btn">Completar</button>
