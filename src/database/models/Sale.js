@@ -24,13 +24,13 @@ module.exports=(sequelize, DataTypes)=>{
         timestamps: false
     }
     const Sale=sequelize.define("Sales", cols, config);
-    Sale.associate= (models)=>{
+    Sale.associate= function(models){
         Sale.hasMany(models.Users, {
             as: "users",
             foreignKey: "user_id"
         })
     }
-    Sale.associate= (models)=>{
+    Sale.associate= function(models){
         Sale.belongsTo(models.Sales_Products, {
             as: "sales_products",
             foreignKey: "sale_id"
