@@ -3,6 +3,7 @@
 
 const express = require('express')
 const path = require('path')
+const methodOverride = require("method-override");
 
 // EXPRESS MAIN
 
@@ -12,8 +13,15 @@ const app = express();
 
 const PORT = 912;
 
-//TEMPLATE ENGINE
+//ESTATICOS
 app.use(express.static(path.join(__dirname, "public")));
+app.use(methodOverride("_method"));
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+
+
+
+//TEMPLATE ENGINE
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'src', 'views'))
 
@@ -21,11 +29,7 @@ app.set('views', path.join(__dirname, 'src', 'views'))
 
 const mainRoutes = require("./src/routes/mainRoutes");
 const userRoutes = require("./src/routes/userRoutes")
-
 const productRouter = require("./src/routes/productRoutes");
-/*
-const userRouter = require("./routes/userRoutes");
-*/
 
 //USES DE MODULOS
 
