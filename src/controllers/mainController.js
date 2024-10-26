@@ -1,9 +1,14 @@
 // REQUIRE DATABASE
-
+const db = require("../database/models")
 
 const mainController= {
     home: (req,res) =>{
-        res.render("product/index")
+        db.Products.findAll()
+            .then((products) => {
+                res.render("product/index", {
+                    products: products,
+                });
+            })
     }
 }
 
