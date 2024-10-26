@@ -6,7 +6,7 @@
     <%- include("../partials/header") %>
 
     <H1> aca va el register</H1>
-    <form class="register-form" action="/user/register" method="POST">
+    <form class="register-form" action="/user/register" method="POST" enctype="multipart/form-data">
         <label for="userName">Username</label>
         <input type="text" id="userName" name="userName" required />
     
@@ -17,7 +17,7 @@
         <input type="password" id="password" name="password" required />
     
         <label for="image">Imagen</label>
-        <input type="text" id="image" name="image" required />
+        <input type="file" id="image" name="image" accept="image/*" required />
     
         <button type="submit">Regístrate</button>
     </form>
