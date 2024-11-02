@@ -5,19 +5,27 @@
 <body>
     <%- include("../partials/header") %>
 
-    <form action="">
+    <form action="/user/login" method="POST">
         <div class="login_box">
 
             <h3>Iniciar sesión</h3>
             ————————————————
             <h4 class="mail_h4">E-mail</h4>
             <input class="login_inputs" type="email" name="email">
-
+            <% if (locals.errors && errors.email) { %>
+                <div class="errors-form">
+                    <%= errors.email.msg %>
+                </div>
+            <% } %><br>
             <h4 class="contra_h4">Contraseña</h4>
-            <input class="login_inputs" type="password" name="contraseña">
+            <input class="login_inputs" type="password" name="password">
+            <% if (locals.errors && errors.password) { %>
+                <div class="errors-form">
+                    <%= errors.password.msg %>
+                </div>
+            <% } %>
 
-
-            <button class="login_btn">Completar</button>
+            <input class="login_btn" type="submit" value="Iniciar Sesion">
 
             <div class="txt_box">
                 <strong>¿No tienes una cuenta?</strong> <br>
