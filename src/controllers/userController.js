@@ -57,7 +57,8 @@ const userController = {
             })
     },
     registerView: (req, res) => {
-        res.render("user/register")
+        const showLinks = req.session.usuario ? true : false;
+        res.render("user/register", { showLinks });
     },
     register: async (req, res) => {
         console.log(req.body); // Para verificar qué datos se están recibiendo
@@ -86,6 +87,10 @@ const userController = {
                 res.redirect("/user/login"); // Redirigir a la página de inicio de sesión
             })
             .catch((err) => console.log(err));
+    },
+    logout: (req, res)=>{
+        req.session.destroy();
+        return res.redirect("/")
     }
 
 }
