@@ -9,7 +9,7 @@ const userController = require("../controllers/userController")
 
 userRouter.get("/login", guest,userController.loginView);
 userRouter.post("/login",userController.login)
-userRouter.get("/register",userController.registerView)
+userRouter.get("/register",guest,userController.registerView)
 userRouter.post("/register",uploadUser.single("image"),userController.register)
 
 

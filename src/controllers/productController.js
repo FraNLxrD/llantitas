@@ -6,7 +6,14 @@ const Op = db.Sequelize.Op;
 
 const productController= {
     formget: (req,res) => {
-        res.render("product/create")
+        const {
+            usuario
+        } = req.session;
+        const showLinks = req.session.usuario ? true : false;
+        res.render("product/create",{
+            showLinks,
+            idUsuario: usuario ? usuario.id : 0
+        })
     },
     storeProduct: (req,res)=>{
         const form = req.body

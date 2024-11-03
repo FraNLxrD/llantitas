@@ -7,10 +7,18 @@
                 <h6>La pagina de compra y venta mas grande de Jujuy</h6>
             </div>
         </div>
+        <% if(showLinks){ %>
         <div class="auth-buttons">
             <a href="/user/register"><button>Registrarse</button></a>
             <a href="/user/login"><button>Iniciar sesión</button></a>
         </div>
+        <% } %>
+        <% if(!showLinks){ %>
+        <div class="auth-buttons">
+            <a href="/user/profile"><button>Mi cuenta</button></a>
+        </div>
+        <% } %>
+
     </div>
     <nav>
         <a href="#">Productos</a>
