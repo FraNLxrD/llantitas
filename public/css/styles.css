@@ -182,3 +182,11 @@ h1{
     border-bottom-left-radius: 1em;
     border-bottom-right-radius: 1em;
 }
+
+.logout_txt{
+    text-decoration: none;
+    color: #EAEAEA;
+}
+.logout_txt:hover{
+    text-decoration: underline;
+}
