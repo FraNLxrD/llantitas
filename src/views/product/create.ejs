@@ -5,34 +5,38 @@
 <body>
 
     <%- include("../partials/header") %>
-    <div class="contenedor">
         <form action="/product/sell" method="POST" enctype="multipart/form-data">
+
+            <div class="product_box">
+            
             <div>
-                <label for="prod_name">Nombre del Producto:</label>
-                <input type="text" id="prod_name" name="prod_name" required>
+                <label for="prod_name"><h4>Nombre:</h4></label>
+                <input class="products_inputs" type="text" id="prod_name" namse="prod_name" required>
             </div>
             
             <div>
-                <label for="image">Imagen del Producto:</label>
-                <input type="file" id="image" name="image" accept="image/*" required>
+                <label for="image"><h4>Imagen del Producto:</h4></label>
+                <input  type="file" id="image" name="image" accept="image/*" required>
             </div>
             
             <div>
-                <label for="brand">Marca:</label>
-                <input type="text" id="brand" name="brand" required>
+                <label for="brand"><h4>Marca:</h4></label>
+                <input class="products_inputs" type="text" id="brand" name="brand" required>
             </div>
             
             <div>
-                <label for="price">Precio:</label>
-                <input type="number" id="price" name="price" step="0.01" min="0" required>
+                <label for="price"><h4>Precio:</h4></label>
+                <input class="products_inputs"  type="number" id="price" name="price" step="0.01" min="0" required>
             </div>
             
             <div>
-                <label for="stock">Cantidad en Inventario:</label>
-                <input type="number" id="stock" name="stock" min="0" required>
+                <label for="stock"><h4>Stock</h4></label>
+                <input class="products_inputs" type="number" id="stock" name="stock" min="0" required>
             </div>
             
-            <button type="submit">Guardar Producto</button>
+            <button class="register_btn" type="submit">Guardar Producto</button>
+
+        </div>
         </form>
     </div>
 </body>
