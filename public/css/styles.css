@@ -185,8 +185,53 @@ h1{
 
 .logout_txt{
     text-decoration: none;
-    color: #EAEAEA;
+    background-color: #444;
+    border: none;
+    color: white;
+    padding: 8px 16px;
+    cursor: pointer;
+    border-radius: 5px;
 }
 .logout_txt:hover{
-    text-decoration: underline;
+    background-color: #666;
+}
+
+.caja-producto{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    line-height: normal;
+    margin-top: 40px;
+}
+
+.foto-producto{
+    margin: 5px;
+    border-radius: 1em;
+    border: #171818;
+    
+}
+
+.boton-comprar{
+    background-color:#86a2b1
+    border: none;
+    color: white;
+    padding: 8px 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+    color: #171818;
+
+}
+.boton-comprar:hover{
+    background-color:#93a1a8;
+}
+
+
+.descripcion-producto{
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: left;
+    align-items: center;
+    line-height: normal;
 }

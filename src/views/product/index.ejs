@@ -11,20 +11,28 @@
             <p class="p1">Tu próximo par te espera...</p>
 
         </div>
+    </div>
+
+    <div class="banner">
+        ACA VA EL BANNER
+
+    </div>
+    
         <div>
             <% products.forEach(products => { %>
             <article class="caja-producto">
                 <picture class="foto-producto">
-                    <img src="/img/products/<%= products.image %>" alt="<%= products.prod_name %>" class=""
-                        width="200px" />
+                    <img class="foto-producto" src="/img/products/<%= products.image %>" alt="<%= products.prod_name %>" class=""
+                        width="150px" />
                 </picture>
-
+            
                 <section class="descripcion-producto">
                     <section class="descripcion">
                         <p class="titulo-show"><%= products.prod_name %></p>
-                        <p class="lugar-show"><%= products.price %></p>
+                        <p class="lugar-show">$<%= products.price %></p>
                     </section>
                 </section>
+            
                 <a href="/products/<%= products.id %>/detail">
                     <button class="boton-comprar">
                         COMPRAR<i class="ticket-botoncomprar fas fa-ticket-alt"></i>
@@ -33,7 +41,7 @@
             </article>
             <% }) %>
         </div>
-    </div>
+    
 </body>
 
 </html>
