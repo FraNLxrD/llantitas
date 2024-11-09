@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include("../partials/head") %>
+<body>
+    <%- include("../partials/header") %>
+    <h2>Resultado de tu busqueda: <%= parametro %></h2>
+    <div>
+        <% if (results == "") { %>
+            <p>NO SE HAN ENCONTRADO PRODUCTOS</p>
+        <% } %>
+        <% results.forEach(prod => { %>
+            <article class="caja-producto">
+                <picture class="foto-producto">
+                    <img
+                        src="/img/products/<%= prod.image %>"
+                        alt="<%= prod.prod_name %>"
+                        class=""
+                        width="200px"
+                    />
+                </picture>
+
+                <section class="descripcion-producto">
+                    <section class="descripcion">
+                        <p class="titulo-show"><%= prod.prod_name %></p>
+                    </section>
+                </section>
+                <a href="/product/<%= prod.id %>/detail">
+                    <button class="boton-comprar">
+                        COMPRAR<i
+                            class="ticket-botoncomprar fas fa-ticket-alt"
+                        ></i>
+                    </button>
+                </a>
+            </article>
+            <% }) %>
+    </div>
+</body>
+</html>
