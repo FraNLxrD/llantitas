@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include("../partials/head") %>
+<body>
+    <%- include("../partials/header") %>
+    <div>
+        <img src="/img/user/<%= miperfil.image %>" alt="imagenlol" width="400px">
+        <h3><%= miperfil.userName %></h3>
+        <h4><%= miperfil.email %></h4>
+        <a href="/user/edit/<%= miperfil.id %>">
+              <button> MODIFICAR PERFIL</button>
+        </a><br>
+        <a class="logout_txt" href="/user/logout/">
+            Cerrar Sesion
+            <i  class="fa-solid fa-user"></i>
+        </a>
+    </div>
+</body>
+</html>
