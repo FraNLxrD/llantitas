@@ -7,38 +7,43 @@
     <%- include("../partials/header") %>
         <form action="/product/sell" method="POST" enctype="multipart/form-data">
 
-            <div class="product_box">
+        <div class="product_box">
             
+ 
+                <h3>Publicar para la venta</h3>
+               <p style="margin-top: 0px; font-weight: 100;">————————————————</p>
+
             <div>
-                <label for="prod_name"><h4>Nombre:</h4></label>
+                <label for="prod_name"><p2>Nombre</p2></label><br>
                 <input class="products_inputs" type="text" id="prod_name" name="prod_name" required>
-            </div>
+            </div><br>
             
             <div>
-                <label for="image"><h4>Imagen del Producto:</h4></label>
-                <input  type="file" id="image" name="image" accept="image/*" required>
-            </div>
-            
-            <div>
-                <label for="brand"><h4>Marca:</h4></label>
+                <label for="brand"><p2>Marca</p2></label><br>
                 <input class="products_inputs" type="text" id="brand" name="brand" required>
-            </div>
+            </div><br>
             
             <div>
-                <label for="price"><h4>Precio:</h4></label>
+                <label for="price"><p2>Precio</p2></label><br>
                 <input class="products_inputs"  type="number" id="price" name="price" step="0.01" min="0" required>
-            </div>
+            </div><br>
             
             <div>
-                <label for="stock"><h4>Stock</h4></label>
+                <label for="stock"><p2>Stock</p2></label><br>
                 <input class="products_inputs" type="number" id="stock" name="stock" min="0" required>
-            </div>
+            </div><br>
+
+            <div style="margin-top: 7px;">
+                <label class="file-label" for="image"><p2>Imagen del Producto</p2></label><br>
+                <input class="file-input" type="file" id="image" name="image" accept="image/*" required>
+                <p2 style="font-size: 12px; font-weight: 100;">(350x250px)</p2>
+            </div><br>
             
             <button class="register_btn" type="submit">Guardar Producto</button>
 
         </div>
         </form>
-    </div>
+   
 </body>
 
 </html>

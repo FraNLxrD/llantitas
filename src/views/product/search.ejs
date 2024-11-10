@@ -3,36 +3,38 @@
     <%- include("../partials/head") %>
 <body>
     <%- include("../partials/header") %>
-    <h2>Resultado de tu busqueda: <%= parametro %></h2>
+    <h2 style="margin-left: 20px; margin-bottom: 0px;">Resultados de tu búsqueda: <%= parametro %></h2><br>
     <div>
         <% if (results == "") { %>
-            <p>NO SE HAN ENCONTRADO PRODUCTOS</p>
+            <h3 style="text-align: center;">Lo sentimos :(</h3>
+            <h3 style="text-align: center; font-weight: 100;">No sea han encontrado productos disponibles relacionados con tu búsqueda</h3>
         <% } %>
+        <div class="productos">
         <% results.forEach(prod => { %>
             <article class="caja-producto">
                 <picture class="foto-producto">
-                    <img
+                    <img class="fotito"
                         src="/img/products/<%= prod.image %>"
                         alt="<%= prod.prod_name %>"
-                        class=""
-                        width="200px"
+
                     />
                 </picture>
 
                 <section class="descripcion-producto">
                     <section class="descripcion">
-                        <p class="titulo-show"><%= prod.prod_name %></p>
+                        <p class="nombre_zapa"><%= prod.prod_name %></p>
+                        <p class="precio">$ <%= prod.price %></p>
+                        
                     </section>
                 </section>
-                <a href="/product/<%= prod.id %>/detail">
-                    <button class="boton-comprar">
-                        COMPRAR<i
-                            class="ticket-botoncomprar fas fa-ticket-alt"
-                        ></i>
+               
+                    <button class="boton-comprar" href="/product/<%= prod.id %>/detail">
+                        COMPRAR
                     </button>
-                </a>
+         
             </article>
             <% }) %>
+        </div>
     </div>
 </body>
 </html>
