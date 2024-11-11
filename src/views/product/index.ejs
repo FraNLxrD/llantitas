@@ -6,36 +6,37 @@
 
     <%- include("../partials/header") %>
     <div class="contenedor">
-        <div class="barra">
+         <div class="barra">
             <i class="fa-solid fa-magnifying-glass"></i>
             <form action="/product/search" method="get" class="p1" enctype="multipart/form-data">
-                <input type="text" class="p1" name="search" placeholder="Tu próximo par te espera...">
+                <input style="color: white; box-shadow: 0 0 0 1000px #393939 inset; -webkit-text-fill-color: #fff;  " type="text" class="bar_text" name="search" placeholder="Tu próximo par te espera...">
             </form>
-
-        </div>
-        <div>
-            <% products.forEach(products => { %>
-            <article class="caja-producto">
-                <picture class="foto-producto">
-                    <img src="/img/products/<%= products.image %>" alt="<%= products.prod_name %>" class=""
-                        width="200px" />
-                </picture>
-
-                <section class="descripcion-producto">
-                    <section class="descripcion">
-                        <p class="titulo-show"><%= products.prod_name %></p>
-                        <p class="lugar-show"><%= products.price %></p>
-                    </section>
-                </section>
-                <a href="/product/<%= products.id %>/detail">
-                    <button class="boton-comprar">
-                        COMPRAR<i class="ticket-botoncomprar fas fa-ticket-alt"></i>
-                    </button>
-                </a>
-            </article>
-            <% }) %>
         </div>
     </div>
+
+    <div class="productos">
+        <% products.forEach(products => { %>
+        <article class="caja-producto">
+            <picture class="foto-producto">
+                <img class="fotito" src="/img/products/<%= products.image %>" alt="<%= products.prod_name %>" class=""
+                    width="200px" />
+            </picture>
+
+            <section class="descripcion-producto">
+                <section class="descripcion">
+                    <p class="nombre_zapa"><%= products.prod_name %></p>
+                    <p class="precio">$ <%= products.price %></p>
+                </section>
+            </section>
+            <a href="/product/<%= products.id %>/detail">
+                <button class="boton-comprar">
+                    COMPRAR
+                </button>
+            </a>
+        </article>
+        <% }) %>
+    </div>
+   
 </body>
 
 </html>
