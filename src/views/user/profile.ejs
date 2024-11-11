@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include("../partials/head") %>
+<body>
+    <%- include("../partials/header") %>
+    <div class="contenedor">
+    <div class="profile_box">
+        <h3 style="margin-bottom: 0;">Mi perfil</h3>
+        <p style="margin:5px;">————————————————</p>
+        <img class="img_profile" src="/img/user/<%= miperfil.image %>" alt="imagenlol" width="200px" height="200px">
+        <div style="margin: 0; text-align: center;">
+        <p style="font-size: 13px; margin-bottom: 5px; margin-top: 20px;">Nombre de usuario</p>
+        <p style="font-weight: bold; margin-top: 0px; margin-bottom: 1px;"><%= miperfil.userName %></p>
+     
+        <p style="font-size: 13px; margin-bottom: 5px; margin-top: 15px;">Correo</p>
+        <p style="font-weight: bold; margin-top: 0px; margin-bottom: 0px;"><%= miperfil.email %></p>
+        </div>
+        <p style="margin:5px;">————————————————</p>
+        <a href="/user/edit/<%= miperfil.id %>">
+        <button class="boton-mod" > Modificar perfil</button><br>
+        </a><br>
+        <a href="/user/logout/">
+        <button class="boton-logout">Cerrar sesión</button>
+        </a>
+    </div>
+</div>
+</body>
+</html>

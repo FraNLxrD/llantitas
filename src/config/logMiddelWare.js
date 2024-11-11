@@ -2,7 +2,7 @@ function log(req,res,next){
     if(req.session.usuario!=undefined){
         next()
     }else{
-        res.redirect("/login")
+        res.redirect("/user/login")
     }
 }
 module.exports= log

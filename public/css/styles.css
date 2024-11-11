@@ -64,17 +64,36 @@ h1{
 .barra{
     margin-top: 20px;
     width: 700px;
-    height: 30px;
+    height: 40px;
     background-color: #393939; 
     border-radius: 5px;
     display: flex;
     gap: 10px;
     align-items: center;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.438);
+
 }
 
-.p1{
-    color: grey;
+.bar_text{
+    border: 0;
+    background-color: #393939; 
+    text-decoration: none;
+    width: 650px;
+    font-size: 18px;
+}
+
+.bar_text[type="text"]:focus {
+    outline: none;
+    box-shadow: none; 
+}
+
+.product_box{
+    font-weight: bold;
+    padding-top: 10px;
+    display: flex;
+    justify-content: center;
+    justify-content: space-around;
+    align-items: center;
 }
 
 .fa-solid{
@@ -85,6 +104,75 @@ h1{
     width: 100%;
     display: flex;
     justify-content: center;
+    
+}
+
+.profile_box{
+    color: black;
+    width: 300px;
+
+    border-bottom-left-radius: 1em;
+    border-bottom-right-radius: 1em;
+    background-color: #EAEAEA;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-around;
+    align-items: center;
+    line-height: normal;
+}
+
+.img_profile{
+    border-radius: 0.5em;
+    margin-top: 7px;
+    box-shadow: 0px 0px 3px 2px rgb(61, 60, 60);
+}
+
+.boton-logout {
+    background-color: #384044; /* Color de fondo gris oscuro */
+    color: #fff; /* Color de texto blanco */
+    border: 1px solid #555; /* Borde gris oscuro */
+    padding: 10px 20px;
+    font-size: 12px;
+    font-weight: bold;
+   
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    border-radius: 0.5em;
+    margin-bottom: 15px;
+}
+
+.boton-logout:hover {
+    background-color: #666; /* Color de fondo más claro en hover */
+    transform: scale(1.05); /* Efecto de agrandamiento al pasar el mouse */
+}
+
+.boton-logout:active {
+    background-color: #333; /* Color de fondo más oscuro al hacer clic */
+    transform: scale(0.95); /* Pequeña contracción al hacer clic */
+}
+
+.boton-mod {
+    background-color: #384044; /* Color de fondo gris oscuro */
+    color: #fff; /* Color de texto blanco */
+    border: 1px solid #555; /* Borde gris oscuro */
+    padding: 10px 20px;
+    font-size: 10.5px;
+    font-weight: bold;
+    
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    border-radius: 0.5em;
+  
+}
+
+.boton-mod:hover {
+    background-color: #666; /* Color de fondo más claro en hover */
+    transform: scale(1.05); /* Efecto de agrandamiento al pasar el mouse */
+}
+
+.boton-mod:active {
+    background-color: #333; /* Color de fondo más oscuro al hacer clic */
+    transform: scale(0.95); /* Pequeña contracción al hacer clic */
 }
 
 .login_box{
@@ -99,13 +187,18 @@ h1{
     color: #171818;
     border-bottom-left-radius: 1em;
     border-bottom-right-radius: 1em;
+    font-weight: bold;
+    text-align: center;
 }
+
+
 .login_inputs{
     border-color: #171818;
     border-radius: 1em;
     background-color: #EAEAEA;
     padding: 8px;
 }
+
 .mail_h4{
     margin-right: 115px;
 }
@@ -120,7 +213,14 @@ h1{
     cursor: pointer;
     border-radius: 5px;
     margin-top: 10px;
+    transition: background-color 0.3s, transform 0.2s;
 }
+
+.login_btn:hover{
+    background-color: #666; /* Color de fondo más claro en hover */
+    transform: scale(1.05); /* Efecto de agrandamiento al pasar el mouse */
+}
+
 .login_txt{
     text-decoration: none;
     color: #171818;
@@ -136,6 +236,7 @@ h1{
 
 
 .register_box{
+    font-weight: bold;
     display: flex;
     flex-flow: column wrap;
     justify-content: space-around;
@@ -157,8 +258,20 @@ h1{
     padding: 8px 16px;
     cursor: pointer;
     border-radius: 5px;
-    margin-top: 10px;
     margin-bottom: 10px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.register_btn:hover{
+    background-color: #666; /* Color de fondo más claro en hover */
+    transform: scale(1.05); /* Efecto de agrandamiento al pasar el mouse */
+}
+
+.login_inputs{
+    border-color: #171818;
+    border-radius: 1em;
+    background-color: #EAEAEA;
+    padding: 8px;
 }
 
 .products_inputs{
@@ -166,7 +279,6 @@ h1{
     border-radius: 1em;
     background-color: #EAEAEA;
     padding: 8px;
-    margin: 10px;
 }
 
 .product_box{
@@ -181,6 +293,7 @@ h1{
     color: #171818;
     border-bottom-left-radius: 1em;
     border-bottom-right-radius: 1em;
+    text-align: center;
 }
 
 .logout_txt{
@@ -234,4 +347,87 @@ h1{
     justify-content: left;
     align-items: center;
     line-height: normal;
+}
+
+
+.caja-producto{
+    height: 420px;
+    width: 305px;
+    background-color: #384044;
+    box-shadow: 0px 10px 20px 3px rgb(3, 3, 3);
+}
+
+.productos{
+    margin: 20px;
+    gap: 40px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-wrap: wrap;
+    width: auto;
+
+}
+
+.fotito{
+    padding-top: 16px;
+    width: 270px;
+    height: 250px;
+}
+
+.descripcion-producto{
+
+    justify-content: center;
+    text-align: center;
+}
+
+.boton-comprar {
+    background-color: #384044; /* Color de fondo gris oscuro */
+    color: #fff; /* Color de texto blanco */
+    border: 1px solid #555; /* Borde gris oscuro */
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.boton-comprar:hover {
+    background-color: #666; /* Color de fondo más claro en hover */
+    transform: scale(1.05); /* Efecto de agrandamiento al pasar el mouse */
+}
+
+.boton-comprar:active {
+    background-color: #333; /* Color de fondo más oscuro al hacer clic */
+    transform: scale(0.95); /* Pequeña contracción al hacer clic */
+}
+.nombre_zapa{
+    font-size: 20px;
+}
+
+.precio{
+    font-weight: bold;
+}
+
+.file-label {
+    display: inline-block;
+    background-color: #444; /* Color de fondo del botón */
+    color: #fff; /* Color de texto */
+    padding: 10px 20px;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    border: 1px solid #555; /* Borde gris oscuro */
+}
+
+.file-input {
+    display: none; /* Oculta el input real */
+}
+
+.file-label:hover {
+    background-color: #666; /* Color de fondo más claro en hover */
+    transform: scale(1.05); /* Efecto de agrandamiento al pasar el mouse */
 }

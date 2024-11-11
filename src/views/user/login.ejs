@@ -9,15 +9,15 @@
         <div class="login_box">
 
             <h3>Iniciar sesión</h3>
-            ————————————————
-            <h4 class="mail_h4">E-mail</h4>
+            <p style="margin-top: 0px; font-weight: 100;">————————————————</p>
+            <p2>Email</p2>
             <input class="login_inputs" type="email" name="email">
             <% if (locals.errors && errors.email) { %>
                 <div class="errors-form">
                     <%= errors.email.msg %>
                 </div>
             <% } %><br>
-            <h4 class="contra_h4">Contraseña</h4>
+            <p2>Contraseña</p2>
             <input class="login_inputs" type="password" name="password">
             <% if (locals.errors && errors.password) { %>
                 <div class="errors-form">

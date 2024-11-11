@@ -7,22 +7,25 @@
     
     <form class="register-form" action="/user/register" method="POST" enctype="multipart/form-data">
 
-        <div class="register_box">
-            <h3>Registrarse</h3>
-            ————————————————
-        <label for="userName"><h4>Username</h4></label>
-        <input class="login_inputs" type="text" id="userName" name="userName" required />
+    <div class="register_box">
+        <h3>Registrarse</h3>
+        <p style="margin-top: 0px; font-weight: 100;">————————————————</p>
+            
+        <label for="userName"><p2>Nombre de usuario</p2></label>
+        <input class="login_inputs" type="text" id="userName" name="userName" required /><br>
     
-        <label for="email"><h4>Correo Electrónico</h4></label>
-        <input class="login_inputs"  type="email" id="email" name="email" required />
+        <label for="email"><p2>Correo Electrónico</p2></label>
+        <input class="login_inputs"  type="email" id="email" name="email" required /><br>
     
-        <label for="password"><h4>Contraseña</h4></label>
-        <input class="login_inputs" type="password" id="password" name="password" required />
-    
-        <label for="image"><h4>Foto de perfil</h4></label>
-        <input type="file" id="image" name="image" accept="image/*" required />
-    
+        <label for="password"><p2>Contraseña</p2></label>
+        <input class="login_inputs" type="password" id="password" name="password" required /><br>
+        <div style="text-align: center;">
+        <label class="file-label" for="image" style="margin-bottom: 2px;"><p2>Foto de perfil</p2></label><br>
+        <input class="file-input" type="file" id="image" name="image" accept="image/*" required />
+        <p2 style="font-size: 12px; font-weight: 100; margin-top: 0;">(200x200px)</p2>
+        </div><br>
         <input class="register_btn" type="submit" value="Registrarse">
+        
     </div>
     </form>
 
