@@ -4,19 +4,19 @@
 <body>
     <%- include("../partials/header") %>
     <div>
-        <form class="register-form"
+        <form class="mod-form"
         action="/user/edit/<%=idUsuario%>?_method=put"
         method="post"
         enctype="multipart/form-data">
         <label for="">Cambiar nombre de usuario</label>
-        <input type="text" name="username" id="">
+        <input type="text" name="username" id="" class="mod-inputs">
         <label for="">Cambiar foto de perfil</label>
-        <input type="file" name="image" id="" accept="image/*">
+        <input type="file" name="image" id="" accept="image/*" class="mod-inputs">
         <label for="">Cambiar Email</label>
-        <input type="email" name="email" id="">
+        <input type="email" name="email" id="" class="mod-inputs">
         <label for="">Cambiar Contraseña</label>
-        <input type="password" name="password" id="">
-        <input type="submit" value="MODIFICAR">
+        <input type="password" name="password" id="" class="mod-inputs">
+        <input type="submit" value="MODIFICAR" class="mod_btn">
         </form>
     </div>
 </body>

@@ -386,3 +386,49 @@ h1{
     background-color: #666; /* Color de fondo más claro en hover */
     transform: scale(1.05); /* Efecto de agrandamiento al pasar el mouse */
 }
+.mod-form{
+    font-weight: bold;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-around;
+    align-items: center;
+    line-height: normal;
+    background-color: #EAEAEA;
+    margin-left: 35%;
+    margin-right: 35%;
+    color: #171818;
+    border-bottom-left-radius: 1em;
+    border-bottom-right-radius: 1em;
+    padding-top: 10px;
+}
+
+.mod-inputs{
+    border-color: #171818;
+    border-radius: 1em;
+    background-color: #EAEAEA;
+    padding: 8px;
+    margin-bottom: 15px;
+}
+
+.mod_btn{
+    background-color: #171818;
+    border: none;
+    color: white;
+    padding: 8px 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    transition: background-color 0.3s, transform 0.2s;
+   margin-top: 10px;
+}
+.mod_btn:hover{
+    background-color: #666;
+    transform: scale(1.05); 
+}
+.errors-form{
+    font-family: Arial, sans-serif;
+    text-size-adjust: 10px;
+    margin-top: 5px;
+    color: #ff0303;
+    font-size: small;
+}
