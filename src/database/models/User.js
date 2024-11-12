@@ -21,6 +21,10 @@ module.exports = (sequelize, DataTypes) => {
         image: {
             type: DataTypes.STRING(100),
             allowNull: false
+        },
+        admin: {
+            type: DataTypes.INTEGER(1),
+            allowNull: true
         }
     }
     let config = {

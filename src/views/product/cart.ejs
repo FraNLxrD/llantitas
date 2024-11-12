@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include("../partials/head") %>
+<body>
+    <%- include("../partials/header") %>
+    <div>
+        <ul>
+            <% cart.forEach(item => { %>
+              <li>
+                <img src="/img/products/<%= item.image %>" alt="<%= item.prod_name %>" width="100">
+                <p>Producto: <%= item.prod_name %></p>
+                <p>Marca: <%= item.brand %></p>
+                <p>Precio: $<%= item.price %></p>
+                <p>Cantidad: <%= item.quantity %></p>
+                <p>Total: $<%= item.total %></p>
+                <form action="/product/cart-del" method="POST">
+                  <input type="hidden" name="productId" value="<%= item.id %>">
+                  <button type="submit">Eliminar</button>
+                </form>
+              </li>
+            <% }) %>
+          </ul>
+          <h1>TOTAL: <%= cartTotal %></h1>
+          <form action="/product/pay" method="get">
+            <input type="hidden" name="total" value="<%= cartTotal %>" >
+            <button type="submit">PAGAR</button>
+          </form>
+    </div>
+    <%- include("../partials/footer") %>
+</body>
+</html>
