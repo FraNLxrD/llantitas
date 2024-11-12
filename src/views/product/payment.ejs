@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include("../partials/head") %>
+<body>
+    <%- include("../partials/header") %>
+    
+    <div>
+        <h3>TOTAL A PAGAR: <%= total %></h3>
+
+        <form action="/product/success" method="get">
+            <input type="text" name="nombre">
+            <input type="text" name="apellido">
+            <select name="departamento" id="">
+                <option value=""></option>
+            </select>
+            <input type="text" name="domicilio" id="">
+            <select name="metododepago" id="">
+                <option value=""></option>
+            </select>
+            <input type="hidden" name="total" value="<%= total %>">
+            <button type="submit">PÁGARAS</button>
+        </form>
+
+
+    </div>
+
+
+
+
+    <%- include("../partials/footer") %>
+</body>
+</html>
