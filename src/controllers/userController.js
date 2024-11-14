@@ -11,15 +11,16 @@ const {
 const userController = {
     loginView: (req, res) => {
         const showLinks = req.session.usuario ? true : false
+        const successMessage = undefined
         res.render("user/login", {
-            showLinks
+            showLinks,
+            successMessage
         })
     },
     login: async(req, res) => {
         const { email } = req.body;
         const contraseña= req.body.password;
         const showLinks = req.session.usuario ? true : false;
-
         console.log("Contraseña ingresada:", contraseña); // Para depuración
         
         console.log(await bcryptjs.hash(contraseña, 10,))

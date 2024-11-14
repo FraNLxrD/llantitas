@@ -4,7 +4,11 @@
 
 <body>
     <%- include("../partials/header") %>
-
+    <% if (successMessage) { %>
+        <script>
+            alert("<%= successMessage %>")
+        </script>
+    <% } %><br>
     <form action="/user/login" method="POST">
         <div class="login_box">
 

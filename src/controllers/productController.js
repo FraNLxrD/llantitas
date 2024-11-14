@@ -6,34 +6,34 @@ const destroy = require("destroy");
 const PATH_PUBLIC_IMAGES = path.join(__dirname, "../../public/img/products/");
 const Op = db.Sequelize.Op;
 
-const productController= {
-    formget: (req,res) => {
+const productController = {
+    formget: (req, res) => {
         const {
             usuario
         } = req.session;
         const showLinks = req.session.usuario ? true : false;
-        res.render("product/create",{
+        res.render("product/create", {
             showLinks,
             idUsuario: usuario ? usuario.id : 0
         })
     },
-    storeProduct: (req,res)=>{
+    storeProduct: (req, res) => {
         const form = req.body
-        const fileUpload= req.file
+        const fileUpload = req.file
 
         db.Products.create({
-            prod_name: form.prod_name,
-            image: fileUpload.filename, // El nombre del archivo subido
-            brand: form.brand,
-            price: Number(form.price), // Asegúrate de convertir el precio a número
-            stock: Number(form.stock) 
-        }).then(() => {
-            res.redirect("/"); // Redirigir a la página de productos después de guardar
-        })
-        .catch((err) => console.log(err));
+                prod_name: form.prod_name,
+                image: fileUpload.filename, // El nombre del archivo subido
+                brand: form.brand,
+                price: Number(form.price), // Asegúrate de convertir el precio a número
+                stock: Number(form.stock)
+            }).then(() => {
+                res.redirect("/"); // Redirigir a la página de productos después de guardar
+            })
+            .catch((err) => console.log(err));
 
     },
-    detalleProducto: (req,res)=>{
+    detalleProducto: (req, res) => {
         const {
             id
         } = req.params;
@@ -42,18 +42,19 @@ const productController= {
             usuario
         } = req.session;
         const showLinks = req.session.usuario ? true : false;
-
+        console.log(usuario)
         db.Products.findByPk(id)
             .then((prod) => {
                 res.render("product/productDetail", {
                     prod,
                     showLinks,
                     idUsuario: usuario ? usuario.id : 0,
+                    admin: usuario ? usuario.admin : undefined
                 });
             })
             .catch((err) => console.log(err));
     },
-    search: async(req,res)=>{
+    search: async (req, res) => {
         const parametro = req.query.search;
         const {
             usuario
@@ -78,7 +79,7 @@ const productController= {
             res.status(500).send('Error en la búsqueda');
         }
     },
-    destroy: (req,res)=>{
+    destroy: (req, res) => {
         const {
             id
         } = req.params;
@@ -109,7 +110,108 @@ const productController= {
                 }
             })
             .catch((err) => console.log(err));
+    },
+    cartView: async (req, res) => {
+        const cart = req.cookies.cart ? JSON.parse(req.cookies.cart) : [];
+        const productIds = cart.map(item => item.productId);
+        const {
+            usuario
+        } = req.session;
+        const showLinks = req.session.usuario ? true : false;
+
+        try {
+            const products = await db.Products.findAll({ // Corrección aquí
+                where: {
+                    id: productIds
+                }
+            });
+
+            const cartDetails = cart.map(item => {
+                const product = products.find(prod => prod.id === item.productId);
+                return {
+                    ...product.toJSON(),
+                    quantity: item.quantity,
+                    total: product.price * item.quantity
+                };
+            });
+            const cartTotal = cartDetails.reduce((acc, item) => acc + item.total, 0).toFixed(2);
+
+
+            res.render('product/cart', {
+                cart: cartDetails,
+                cartTotal,
+                showLinks,
+                idUsuario: usuario ? usuario.id : 0,
+            });
+        } catch (error) {
+            console.error("Error al recuperar productos del carrito:", error);
+            res.status(500).send("Error al cargar el carrito.");
+        }
+    },
+    Cart: (req, res) => {
+        const {
+            productId,
+            quantity
+        } = req.body;
+
+        const cart = req.cookies.cart ? JSON.parse(req.cookies.cart) : [];
+
+        console.log(cart)
+
+        const existingProduct = cart.find((prod) => parseInt(prod.productId) === parseInt(productId));
+        if (existingProduct) {
+            existingProduct.quantity += parseInt(quantity);
+        } else {
+            cart.push({
+                productId: parseInt(productId),
+                quantity: parseInt(quantity)
+            });
+        }
+        res.cookie('cart', JSON.stringify(cart), { httpOnly: true });
+        res.redirect('/product/cart');
+    },
+    cartDestroy: (req,res)=>{
+        const { productId } = req.body;
+        let cart = req.cookies.cart ? JSON.parse(req.cookies.cart) : [];
+
+        cart = cart.filter(item => item.productId != productId);
+
+        res.cookie('cart', JSON.stringify(cart), { httpOnly: true });
+        res.redirect('/product/cart');
+    },
+    payView: (req,res)=>{
+        const {
+            usuario
+        } = req.session;
+        const showLinks = req.session.usuario ? true : false;
+        const total = req.query.total
+
+
+        res.render('product/payment',{
+            showLinks,
+            total,
+            idUsuario: usuario ? usuario.id : 0,
+        })
+    },
+    successView: (req,res)=>{
+        const {
+            usuario
+        } = req.session;
+        const showLinks = req.session.usuario ? true : false;
+
+        const datos= req.query;
+
+        res.render('product/success',{
+            showLinks,
+            datos,
+            idUsuario: usuario ? usuario.id : 0,
+        })
+
+
     }
+
+
+
 }
 
 module.exports = productController;

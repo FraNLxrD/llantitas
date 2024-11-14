@@ -17,9 +17,18 @@
             <p style="font-size: 25px;">Marca: <%= prod.brand %></p>
             <h4 style="font-size: 25px;">$ <%= prod.price %></h4>
             <h5 style="font-size: 20px;">Disponibles: <%= prod.stock %></h5>
-            <form action="/product/destroy/<%= prod.id %>?_method=DELETE" method="post">
-                <button class="boton-comprar" type="submit">ELIMINAR</button>
+            <form action="/product/cart" method="post">
+                <input type="hidden" name="productId" value="<%= prod.id %>">
+                <label for="quantity">Cantidad:</label>
+                <input type="number" id="quantity" name="quantity" value="1" min="1" max="<%= prod.stock %>">
+                <button class="boton-comprar" type="submit">Añadir al carrito</button>
             </form>
+            <% if(admin){ %>
+                <form action="/product/destroy/<%= prod.id %>?_method=DELETE" method="post">
+                    <button class="boton-comprar" type="submit">ELIMINAR</button>
+                </form>
+                <% } %>
+            
         </div>
     </div>
 </body>
