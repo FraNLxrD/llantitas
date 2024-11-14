@@ -94,6 +94,7 @@ h1{
     justify-content: center;
     justify-content: space-around;
     align-items: center;
+
 }
 
 .fa-solid{
@@ -191,6 +192,21 @@ h1{
     text-align: center;
 }
 
+.cart_box{    
+    width: 400px;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-around;
+    align-items: center;
+    line-height: normal;
+    background-color: #EAEAEA;
+    margin-left: 40%;
+    margin-right: 40%;
+    color: #171818;
+    border-bottom-left-radius: 1em;
+    border-bottom-right-radius: 1em;
+    font-weight: bold;
+    text-align: center;}
 
 .login_inputs{
     border-color: #171818;
@@ -281,6 +297,8 @@ h1{
     padding: 8px;
 }
 
+
+
 .product_box{
     display: flex;
     flex-flow: column wrap;
@@ -307,9 +325,10 @@ h1{
 
 .caja-producto{
     height: 420px;
-    width: 305px;
+    width: 370px;
     background-color: #384044;
     box-shadow: 0px 10px 20px 3px rgb(3, 3, 3);
+    border-radius: 0.5em;
 }
 
 .productos{
@@ -324,13 +343,24 @@ h1{
 }
 
 .fotito{
-    padding-top: 16px;
-    width: 270px;
+    margin-top: 16px;
+    width: 330px;
     height: 250px;
+    border-radius: 0.5em;
+}
+
+.fotito2{
+    margin-top: 16px;
+    border-radius: 0.5em;
+}
+
+.fotito3{
+    box-shadow: 0px 0px 12px 0px rgb(61, 60, 60);
+    border-radius: 0.5em;
 }
 
 .descripcion-producto{
-
+    border-radius: 0.5em;
     justify-content: center;
     text-align: center;
 }
@@ -345,6 +375,7 @@ h1{
     text-transform: uppercase;
     cursor: pointer;
     transition: background-color 0.3s, transform 0.2s;
+    border-radius: 0.5em;
 }
 
 .boton-comprar:hover {
@@ -434,7 +465,7 @@ h1{
 }
 footer{
     height: 100px;
-    background-color: #86a2b1;
+    background-color: #384044;
     margin-top: 20px;
     height: 100%;
     color: black;
@@ -448,3 +479,101 @@ footer{
     padding-top: 10px;
     align-items: center;
 }
+
+.products_inputs2[type="number"]{
+    width: 50px; 
+    padding: 5px;
+    font-size: 16px;
+    color: #ffffff;
+    background-color: #384044; 
+    border: 1px solid #746e6e; 
+    border-radius: 5px; 
+    border-color: #171818;
+    outline: none; 
+    text-align: center; 
+    transition: border-color 0.3s;
+    
+}
+
+.products_inputs2[type="number"]:focus {
+    border-color: #777; 
+}
+
+
+.products_inputs[type="number"]{
+    width: 50px; 
+    padding: 5px;
+    font-size: 16px;
+    color: #000000;
+    background-color: #EAEAEA; 
+    border: 1px solid #746e6e; 
+    border-radius: 5px; 
+    border-color: #171818;
+    outline: none; 
+    text-align: center; 
+    transition: border-color 0.3s;
+    
+}
+
+.products_inputs[type="number"]:focus {
+    border-color: #777; 
+}
+
+.pay-box{
+    width: 350px;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-around;
+    align-items: center;
+    line-height: normal;
+    background-color: #EAEAEA;
+    margin-left: 40%;
+    margin-right: 40%;
+    color: #171818;
+    border-bottom-left-radius: 1em;
+    border-bottom-right-radius: 1em;
+    text-align: center;
+    margin-bottom: 11.21%;
+}
+
+.pay_select{
+    border-color: #171818;
+    border-radius: 1em;
+    background-color: #EAEAEA;
+    padding: 8px; 
+    width: 270px;
+    padding-top: 10px;
+    margin: 10px;
+
+}
+
+.pay_inputs{
+    border-color: #171818;
+    border-radius: 1em;
+    background-color: #EAEAEA;
+    padding: 8px; 
+    width: 250px;
+    padding-top: 10px;
+    margin: 10px;
+
+}
+.pay_btn{
+    margin-top: 20px;
+    margin-bottom: 10%;
+    padding-bottom: 20px;
+    background-color: #171818;
+    border: none;
+    color: white;
+    padding: 8px 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+    transition: background-color 0.3s, transform 0.2s;
+    
+   
+}
+.pay_btn:hover{
+    background-color: #666; 
+    transform: scale(1.05); 
+}
+

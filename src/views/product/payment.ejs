@@ -4,21 +4,48 @@
 <body>
     <%- include("../partials/header") %>
     
-    <div>
+    <div class="pay-box">
         <h3>TOTAL A PAGAR: <%= total %></h3>
 
         <form action="/product/success" method="get">
-            <input type="text" name="nombre">
-            <input type="text" name="apellido">
-            <select name="departamento" id="">
-                <option value=""></option>
+            
+            
+            <input class="pay_inputs" type="text" name="nombre" placeholder="Nombre">
+           
+            <input class="pay_inputs"  type="text" name="apellido" placeholder="Apellido">
+
+            <select class="pay_select"  name="departamento" id="">
+                <option value="">DEPARTAMENTO</option>
+                <option value="Cochinoca">Cochinoca</option>
+                <option value="Dr. Manuel Belgrano">Dr. Manuel Belgrano</option>
+                <option value="El Carmen">El Carmen</option>
+                <option value="Humahuaca">Humahuaca</option>
+                <option value="Ledesma">Ledesma</option>
+                <option value="Palpalá">Palpalá</option>
+                <option value="Rinconada">Rinconada</option>
+                <option value="San Antonio">San Antonio</option>
+                <option value="San Pedro">San Pedro</option>
+                <option value="Santa Bárbara">Santa Bárbara</option>
+                <option value="Santa Catalina">Santa Catalina</option>
+                <option value="Susques">Susques</option>
+                <option value="Tilcara">Tilcara</option>
+                <option value="Tumbaya">Tumbaya</option>
+                <option value="Valle Grande">Valle Grande</option>
+                <option value="Yavi">Yavi</option>
             </select>
-            <input type="text" name="domicilio" id="">
-            <select name="metododepago" id="">
-                <option value=""></option>
+            
+            <input class="pay_inputs"  type="text" name="domicilio" id="" placeholder="Domicilio">
+
+            <select class="pay_select"  name="metododepago" id="">
+                <option value="payment">METODO DE PAGO</option>
+                <option value="Efectivo">Efectivo</option>
+                <option value="Débito">Débito</option>
+                <option value="Trasnferencia">Trasnferencia</option>
             </select>
-            <input type="hidden" name="total" value="<%= total %>">
-            <button type="submit">PÁGARAS</button>
+
+            <input class="pay_inputs"  type="hidden" name="total" value="<%= total %>"><br>
+
+            <button class="pay_btn"  type="submit">PAGAR</button>
         </form>
 
 

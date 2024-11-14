@@ -7,7 +7,7 @@
     <%- include("../partials/header") %>
         <form action="/product/sell" method="POST" enctype="multipart/form-data">
 
-        <div class="product_box">
+        <div style="margin-bottom: 10%;" class="product_box">
             
  
                 <h3>Publicar para la venta</h3>
@@ -36,14 +36,14 @@
             <div style="margin-top: 7px;">
                 <label class="file-label" for="image"><p2>Imagen del Producto</p2></label><br>
                 <input class="file-input" type="file" id="image" name="image" accept="image/*" required>
-                <p2 style="font-size: 12px; font-weight: 100;">(350x250px)</p2>
+                <p2 style="font-size: 12px; font-weight: 100;">(330x250px)</p2>
             </div><br>
             
-            <button class="register_btn" type="submit">Guardar Producto</button>
+            <button style="margin-bottom: 15px;" class="register_btn" type="submit">Guardar Producto</button>
 
         </div>
         </form>
-   
+        <%- include("../partials/footer") %>
 </body>
 
 </html>
