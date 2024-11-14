@@ -114,6 +114,7 @@ const productController = {
     cartView: async (req, res) => {
         const cart = req.cookies.cart ? JSON.parse(req.cookies.cart) : [];
         const productIds = cart.map(item => item.productId);
+        const queryerror = req.query.errorMsg
         const {
             usuario
         } = req.session;
@@ -140,6 +141,7 @@ const productController = {
             res.render('product/cart', {
                 cart: cartDetails,
                 cartTotal,
+                queryerror,
                 showLinks,
                 idUsuario: usuario ? usuario.id : 0,
             });
@@ -183,15 +185,20 @@ const productController = {
         const {
             usuario
         } = req.session;
+        const cart = req.cookies.cart ? JSON.parse(req.cookies.cart) : [];
         const showLinks = req.session.usuario ? true : false;
         const total = req.query.total
+        if(total == 0){
+            res.redirect('/product/cart?errorMsg=PORFAVOR AÑADA UN PRODUCTO')
+        }else{
+            res.render('product/payment',{
+                showLinks,
+                total,
+                idUsuario: usuario ? usuario.id : 0,
+            })
+        }
 
-
-        res.render('product/payment',{
-            showLinks,
-            total,
-            idUsuario: usuario ? usuario.id : 0,
-        })
+        
     },
     successView: (req,res)=>{
         const {

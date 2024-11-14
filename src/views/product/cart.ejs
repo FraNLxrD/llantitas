@@ -24,6 +24,11 @@
             <% }) %>
           </ul>
           <h1>TOTAL: <%= cartTotal %></h1>
+          <% if (queryerror) { %>
+                <div class="errors-form">
+                    <%= queryerror %>
+                </div>
+            <% } %><br>
           <form action="/product/pay" method="get">
             <input type="hidden" name="total" value="<%= cartTotal %>" >
             <button style="margin-bottom: 20px; margin-top: 12px;" class="boton-comprar" type="submit">PAGAR</button>

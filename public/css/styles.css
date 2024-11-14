@@ -206,7 +206,10 @@ h1{
     border-bottom-left-radius: 1em;
     border-bottom-right-radius: 1em;
     font-weight: bold;
-    text-align: center;}
+    text-align: center;
+    margin-bottom: 18%;
+}
+
 
 .login_inputs{
     border-color: #171818;
@@ -470,6 +473,7 @@ footer{
     height: 100%;
     color: black;
     text-align: center;
+    
 }
 
 .container-footer{
@@ -577,3 +581,13 @@ footer{
     transform: scale(1.05); 
 }
 
+.carritolol{
+    padding-top: 5px;
+    margin-right: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    align-content: center;
+    text-decoration: none;
+}
