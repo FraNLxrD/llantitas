@@ -11,10 +11,8 @@ const {
 const userController = {
     loginView: (req, res) => {
         const showLinks = req.session.usuario ? true : false
-        const successMessage = undefined
         res.render("user/login", {
             showLinks,
-            successMessage
         })
     },
     login: async(req, res) => {
