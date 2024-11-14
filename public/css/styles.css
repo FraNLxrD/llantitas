@@ -477,3 +477,24 @@ h1{
     color: #ff0303;
     font-size: small;
 }
+
+footer{
+    height: 100px;
+    background-color: #86a2b1;
+    margin-top: 20px;
+    width: 100%;
+    color: black;
+    text-align: center;
+    height: 100%;
+    align-items: center;
+}
+
+.container-footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding-top: 10px;
+    align-items: center;
+}
+
+
