@@ -10,11 +10,11 @@
         <form action="/product/success" method="get">
             
             
-            <input class="pay_inputs" type="text" name="nombre" placeholder="Nombre">
+            <input class="pay_inputs" type="text" name="nombre" placeholder="Nombre" required>
            
-            <input class="pay_inputs"  type="text" name="apellido" placeholder="Apellido">
+            <input class="pay_inputs"  type="text" name="apellido" placeholder="Apellido" required>
 
-            <select class="pay_select"  name="departamento" id="">
+            <select class="pay_select"  name="departamento" id="" required>
                 <option value="">DEPARTAMENTO</option>
                 <option value="Cochinoca">Cochinoca</option>
                 <option value="Dr. Manuel Belgrano">Dr. Manuel Belgrano</option>
@@ -34,16 +34,16 @@
                 <option value="Yavi">Yavi</option>
             </select>
             
-            <input class="pay_inputs"  type="text" name="domicilio" id="" placeholder="Domicilio">
+            <input class="pay_inputs"  type="text" name="domicilio" id="" placeholder="Domicilio" required>
 
-            <select class="pay_select"  name="metododepago" id="">
+            <select class="pay_select"  name="metododepago" id="" required>
                 <option value="payment">METODO DE PAGO</option>
                 <option value="Efectivo">Efectivo</option>
                 <option value="Débito">Débito</option>
                 <option value="Trasnferencia">Trasnferencia</option>
             </select>
 
-            <input class="pay_inputs"  type="hidden" name="total" value="<%= total %>"><br>
+            <input class="pay_inputs"  type="hidden" name="total" value="<%= total %>" required><br>
 
             <button class="pay_btn"  type="submit">PAGAR</button>
         </form>
